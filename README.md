@@ -5,14 +5,12 @@ Welcome to the React-data-table wiki! React-Data table is a React component for 
 The table was designed to handle thousands of records with efficiency and performance. All the features of the React-Data table are designed in such a way that they provide maximum speed.
 
 Features of FixedDataTable:
-
-*Search on each column
-*Handling huge amount of data
-*Editable cells
-*Action Column
-*Fixed Column
-*Column Visibility(show/hide)
-*Sorting ascending and descending
-*Pagination
-*Customized styling
-
+* Search on each column
+* Handling huge amount of data
+* Editable cells
+* Action Column
+* Fixed Column
+* Column Visibility(show/hide)
+* Sorting ascending and descending
+* Pagination
+* Customized styling
