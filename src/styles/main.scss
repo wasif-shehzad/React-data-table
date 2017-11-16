@@ -106,7 +106,13 @@ $bg-warning:yellow;
   margin-top: 15px;
   padding: 0px 15px;
   margin-bottom: 15px;
+.container1{
+  height:500px;
+  width:400px;
+  overflow-x:scroll;
+  overflow-y:scroll;
 
+}
   .page-container {
     @extend .container-fluid;
   }
@@ -153,6 +159,37 @@ left:0;
 }
 .tablee{
   overflow:scroll;
+}
+.table-colum-width{
+  width: 150px;
+  text-align: center;
+  height: 34px;
+  line-height: 27px;
+  input{
+    text-align: center;
+    border-radius: 0px;
+  }
+}
+.table-container{
+  border-top:none;
+  margin-top: 50px;
+  width:1070px;
+}
+.table-row{
+  float: left;
+  width:100%;
+  border-bottom:1px solid #000000;
+  width: 1050px;
+}
+.table-body{
+  height: 300px;
+  overflow: auto;
+  clear: both;
+  border: 1px solid #000000;
+  width: 1052px;
+  border-top: none;
+  float: left;
+  overflow-x: hidden;
 }
 body{
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;

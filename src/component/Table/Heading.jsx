@@ -12,9 +12,9 @@ onSort(e,sortType,dataTypeIndex){
 
         return (
 
-                <div className="row">
+                <div className="">
                 {  this.props.order.map((item,i) =>
-                    <div className="col-sm-1 col-md-1 col-lg-1 p-l-5 p-r-5 p-t-5 p-b-5"
+                    <div className="table-colum-width pull-left p-l-5 p-r-5 p-t-5 p-b-5"
                          style={{"background":"#b9c9fe","border":"1px solid "}} key={i}>
                         <b className="weight-600"> {item.toUpperCase()}</b>
                         <div className="pull-right" style={{"display":"grid"}}>
@@ -24,13 +24,9 @@ onSort(e,sortType,dataTypeIndex){
                     </div>
                 )}
                 <div>
-                    <div className="col-sm-1 col-md-1 col-lg-1 p-l-5 p-r-5 p-t-5 p-b-5"
+                    <div className="table-colum-width pull-left p-l-5 p-r-5 p-t-5 p-b-5"
                          style={{"background":"#b9c9fe","border":"1px solid "}}>
                         <b className="weight-600">ACTIONS</b>
-                        <div className="pull-right" style={{"display":"grid"}}>
-                            <span style={{"color":"white"}}  className="glyphicon glyphicon-triangle-top"></span>
-                            <span style={{"color":"white"}}  className="glyphicon glyphicon-triangle-bottom"></span>
-                        </div>
                     </div>
                 </div>
 

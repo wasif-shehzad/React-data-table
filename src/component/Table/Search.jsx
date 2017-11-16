@@ -23,13 +23,13 @@ export class SearchComp extends React.Component{
     }
     render(){
         return (
-            <div className="row">
+            <div className="">
                 {  this.props.order.map((item,i) =>
-                    <div className="col-lg-1 col-md-1 col-xs-1 no-padding" key={i}>
+                    <div className="table-colum-width pull-left " key={i}>
                         <input type="text" className="form-control" style={{"border":"1px solid"}} onKeyUp={(e)=>this.search(e.target.value,item)}/>
                     </div>
                 )}
-                <div className="col-lg-1 col-md-1 col-xs-1 no-padding" >
+                <div className="table-colum-width pull-left " >
                     <input type="text" className="form-control" style={{"border":"1px solid"}} disabled/>
                 </div>
             </div>);

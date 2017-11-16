@@ -15,11 +15,11 @@ constructor(){
         return (
             <div>
                 {this.props.order.map((o,i)=>
-                    <div className="col-sm-1 col-md-1 col-lg-1 text-center" style={{"border":"1px solid "}} key={i}>
+                    <div  key={i}>
                         {
                             this.props.type[i]==="String" || this.props.type[i]==="Text"
                                 ?
-                                <TextField type="Text"  data ={this.props.item[o]} isEditable={this.props.isEditable}
+                                <TextField  type="Text"  data ={this.props.item[o]} isEditable={this.props.isEditable}
                                            inputOnChange={this.props.inputOnChange} rowNumber={this.props.rowNumber}
                                 colNumber={o}/>
                                 :
@@ -35,7 +35,7 @@ constructor(){
                                     :
                                     this.props.type[i]==="Image"
                                         ?
-                                        <ImageComp data={this.props.item[o]}/>
+                                        <ImageComp  data={this.props.item[o]}/>
                                         :
                                         this.props.type[i]==="Dropdown"
                                             ?
@@ -43,13 +43,13 @@ constructor(){
                                             :
                                             this.props.type[i]==="List"
                                                 ?
-                                                <Tuple data={this.props.item[o]}/>
+                                                <Tuple  data={this.props.item[o]}/>
                                                 :
-                                                <Tuple data={this.props.item[o]}/>
+                                                <Tuple  data={this.props.item[o]}/>
                         }
                     </div>
                 )}
-                <div className="col-sm-1 col-md-1 col-lg-1 text-center" style={{"border":"1px solid " , "padding":"3px 0px "}}>
+                <div className="table-colum-width pull-left"  style={{"padding":"3px 0px "}}>
 
                     <ActionColumnComp deleteActionBtnClick={this.props.deleteActionBtnClick} rowNumber={this.props.rowNumber}/>
 

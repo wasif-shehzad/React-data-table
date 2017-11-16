@@ -14,8 +14,8 @@ export class ActionColumnComp extends React.Component{
 
         return (
             <div>
-                <span onClick={this.deleteActionBtnClick} className=" glyphicon glyphicon-edit "></span>
-                <span onClick={this.deleteActionBtnClick} className="glyphicon glyphicon-trash"></span>
+                <span> <img src="./assets/img/edit.png"/></span>
+                <span onClick={this.deleteActionBtnClick}> <img src="./assets/img/delete.png"/></span>
 
             </div>
         );

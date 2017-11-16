@@ -2,6 +2,8 @@ import * as React from "react";
 import {ColVisComp} from "./ColVis";
 import {ContentComp} from "./Content";
 import {HeadingComp} from "./Heading";
+import {ModalComp}  from "./Modal";
+import {PaginationComp} from "./Pagination";
 import {SearchComp} from "./Search";
 
 export class TableComp extends React.Component{
@@ -106,14 +108,22 @@ constructor(){
             this.state.editable=this.tableEditable;
         }
       return (
-    <div  className="container">
-        <ColVisComp order={this.order} type={this.type} onColVisBtnClick={this.onColVisBtnClick}/>
+          <div>
+
+              <ColVisComp order={this.order} type={this.type} onColVisBtnClick={this.onColVisBtnClick}/>
+    <div  className="container" >
+        <div className="table-container">
         <HeadingComp order={this.state.order} type={this.state.type} onSorting={this.onSorting}/>
         <SearchComp order={this.state.order} dataForSearch={this.getSearchData}/>
         <ContentComp data={this.state.data} order={this.state.order}  type={this.state.type} isEditable={this.state.editable}
                      inputOnChange={this.onTupleEditable}
                      deleteActionBtnClick={this.onDeleteBtnClick}/>
-    </div>);
+
+    </div>
+    </div>
+
+              <PaginationComp data={this.state.data}/>
+          </div>);
   }
 }
 TableComp.defaultProps={data:[
@@ -127,6 +137,18 @@ TableComp.defaultProps={data:[
     {"name":"wasi","id":6767,"address":"ghjk","age":32,"muslim":true},
     {"name":"tasf","id":111,"address":"hjk","age":0,"country":"./assets/img/pak.png","muslim":false},
     {"name":"aa","id":112,"address":"hjk","age":10,"country":"./assets/img/pak.png","muslim":false},
+    {"name":"bsf","id":134,"address":"kotla","age":30,"country":"./assets/img/ind.png","muslim":true},
+    {"name":"juiter","id":134,"address":"BlA","age":35,"country":"./assets/img/ind.png","muslim":false},
+    {"name":"fasli","id":13,"address":"Aio","age":34,"country":"./assets/img/ind.png","muslim":true},
+    {"name":"ali","id":4,"address":"kAtl","age":33,"country":"./assets/img/pak.png","muslim":false},
+    {"name":"bsf","id":134,"address":"kotla","age":30,"country":"./assets/img/ind.png","muslim":true},
+    {"name":"juiter","id":134,"address":"BlA","age":35,"country":"./assets/img/ind.png","muslim":false},
+    {"name":"fasli","id":13,"address":"Aio","age":34,"country":"./assets/img/ind.png","muslim":true},
+    {"name":"ali","id":4,"address":"kAtl","age":33,"country":"./assets/img/pak.png","muslim":false},
+    {"name":"bsf","id":134,"address":"kotla","age":30,"country":"./assets/img/ind.png","muslim":true},
+    {"name":"juiter","id":134,"address":"BlA","age":35,"country":"./assets/img/ind.png","muslim":false},
+    {"name":"fasli","id":13,"address":"Aio","age":34,"country":"./assets/img/ind.png","muslim":true},
+    {"name":"ali","id":4,"address":"kAtl","age":33,"country":"./assets/img/pak.png","muslim":false},
     {"name":"bsf","id":134,"address":"kotla","age":30,"country":"./assets/img/ind.png","muslim":true},
     {"name":"juiter","id":134,"address":"BlA","age":35,"country":"./assets/img/ind.png","muslim":false},
     {"name":"fasli","id":13,"address":"Aio","age":34,"country":"./assets/img/ind.png","muslim":true},

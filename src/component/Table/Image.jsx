@@ -5,7 +5,7 @@ export class ImageComp extends React.Component{
     render(){
 
         return (
-            <div>
+            <div className="table-colum-width pull-left" style={{"padding-top":"10px"}}>
             {
             this.props.data
             ?
