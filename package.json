@@ -32,6 +32,7 @@
     "style-loader": "^0.18.2"
   },
   "dependencies": {
-    "autoprefixer": "^7.1.4"
+    "autoprefixer": "^7.1.4",
+    "webpack-dev-server": "^2.9.4"
   }
 }
