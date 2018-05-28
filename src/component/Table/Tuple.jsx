@@ -1,6 +1,6 @@
-import * as React from "react";
+import React,{Component} from "react";
 
-export class Tuple extends React.Component{
+export class Tuple extends Component{
 
     constructor(){
         super();

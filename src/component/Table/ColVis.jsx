@@ -1,6 +1,6 @@
-import * as React from "react";
+import React,{Component} from "react";
 
-export class ColVisComp extends React.Component{
+export class ColVisComp extends Component{
 
     constructor(){
         super();

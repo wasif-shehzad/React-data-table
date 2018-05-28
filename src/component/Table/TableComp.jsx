@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React,{Component} from "react";
 import {ColVisComp} from "./ColVis";
 import {ContentComp} from "./Content";
 import {HeadingComp} from "./Heading";
@@ -6,7 +6,7 @@ import {ModalComp}  from "./Modal";
 import {PaginationComp} from "./Pagination";
 import {SearchComp} from "./Search";
 
-export class TableComp extends React.Component{
+export class TableComp extends Component{
 constructor(){
     super();
     this.data=[];
@@ -16,21 +16,26 @@ constructor(){
     this.state={
         type:["String","Number","String","Number","Image","Boolean"],
         order:["name","id","address","age","country","muslim"],
-        data:[]
+        data:[],
+        recordFrom:1
     }
     this.getSearchData=this.getSearchData.bind(this);
     this.onTupleEditable=this.onTupleEditable.bind(this);
     this.onDeleteBtnClick=this.onDeleteBtnClick.bind(this);
     this.onSorting=this.onSorting.bind(this);
     this.onColVisBtnClick=this.onColVisBtnClick.bind(this);
+    this.getRow = this.getRow.bind(this);
 }
     onDeleteBtnClick(row){
     this.state.data.splice(row,1);
-    this.forceUpdate();
+        let data=this.state.data;
+    this.setState({data});
+
     };
     onTupleEditable(value,row,col){
     this.state.data[row][col]=value;
-    this.forceUpdate();
+    let data=this.state.data;
+    this.setState({data});
     };
     getSearchData(values,cols){
    let data=[].concat(this.data)
@@ -84,10 +89,10 @@ constructor(){
             }
 
         }
-
-        this.forceUpdate();
+    let data=this.state.data;
+        this.setState({data});
     };
-    onColVisBtnClick(item,index){
+     onColVisBtnClick(item,index){
         if(this.order[index]===item && this.state.order.indexOf(item)>-1)
         {
             this.state.type.splice(this.state.order.indexOf(item),1);
@@ -97,8 +102,13 @@ constructor(){
             this.state.type.splice(index,0,this.type[index]);
             this.state.order.splice(index,0,this.order[index]);
         }
-        this.forceUpdate();
+        let order=this.state.order;
+        let type=this.state.type;
+         this.setState({order,type});
     };
+     getRow (record){
+         this.setState({recordFrom:record});
+     };
 
 
   render(){
@@ -117,12 +127,12 @@ constructor(){
         <SearchComp order={this.state.order} dataForSearch={this.getSearchData}/>
         <ContentComp data={this.state.data} order={this.state.order}  type={this.state.type} isEditable={this.state.editable}
                      inputOnChange={this.onTupleEditable}
-                     deleteActionBtnClick={this.onDeleteBtnClick}/>
+                     deleteActionBtnClick={this.onDeleteBtnClick} getRow={this.getRow}/>
 
     </div>
     </div>
 
-              <PaginationComp data={this.state.data}/>
+              <PaginationComp data={this.state.data} recordFrom={this.state.recordFrom}/>
           </div>);
   }
 }

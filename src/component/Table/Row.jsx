@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {ActionColumnComp} from "./ActionColumn";
 import {ImageComp} from "./Image";
 import {Radio} from "./Radio";

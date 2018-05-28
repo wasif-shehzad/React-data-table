@@ -1,6 +1,6 @@
-import * as React from "react";
+import React,{Component} from "react";
 
-export class ModalComp extends React.Component{
+export class ModalComp extends Component{
 
     constructor(){
         super();

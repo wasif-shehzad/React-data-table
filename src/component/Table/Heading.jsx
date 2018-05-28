@@ -1,6 +1,6 @@
-import * as React from "react";
+import  React,{Component} from "react";
 
-export class HeadingComp extends React.Component{
+export class HeadingComp extends Component{
 constructor(){
     super();
     this.onSort=this.onSort.bind(this);

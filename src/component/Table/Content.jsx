@@ -1,14 +1,14 @@
-import * as React from "react";
+import  React,{Component} from "react";
 import {Row} from "./Row";
 import {ModalComp} from "./Modal";
 
-export class ContentComp extends React.Component{
+export class ContentComp extends Component{
 constructor(){
     super();
 this.rowNumber=this.rowNumber.bind(this);
 }
 rowNumber(e){
-e.currentTarget.clientHeight;
+   this.props.getRow(e.currentTarget.scrollTop/34);
 }
     render(){
         return (

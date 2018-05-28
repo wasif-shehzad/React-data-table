@@ -1,6 +1,6 @@
-import * as React from "react";
+import  React,{Component} from "react";
 
-export class SearchComp extends React.Component{
+export class SearchComp extends Component{
 
     constructor(){
         super();

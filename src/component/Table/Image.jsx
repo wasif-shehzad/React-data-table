@@ -1,6 +1,6 @@
-import * as React from "react";
+import  React,{Component} from "react";
 
-export class ImageComp extends React.Component{
+export class ImageComp extends Component{
 
     render(){
 

@@ -1,6 +1,6 @@
-import * as React from "react";
+import  React,{Component} from "react";
 
-export class ActionColumnComp extends React.Component{
+export class ActionColumnComp extends Component{
 
     constructor(){
         super();
