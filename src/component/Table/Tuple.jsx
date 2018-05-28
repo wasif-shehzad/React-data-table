@@ -11,7 +11,6 @@ export class Tuple extends React.Component{
     }
 
     render(){
-
         return (
             <div className="table-colum-width pull-left">
                 <input type={this.props.type} value={this.props.data} disabled={!this.props.isEditable} onChange={(e)=>this.inputOnChange(e)}/>

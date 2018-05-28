@@ -7,12 +7,9 @@ constructor(){
 }
 onSort(e,sortType,dataTypeIndex){
     return this.props.onSorting(e,sortType,dataTypeIndex);
-}
+};
     render(){
-
-        return (
-
-                <div className="">
+        return (<div className="">
                 {  this.props.order.map((item,i) =>
                     <div className="table-colum-width pull-left p-l-5 p-r-5 p-t-5 p-b-5"
                          style={{"background":"#b9c9fe","border":"1px solid "}} key={i}>
@@ -29,7 +26,6 @@ onSort(e,sortType,dataTypeIndex){
                         <b className="weight-600">ACTIONS</b>
                     </div>
                 </div>
-
             </div>);
     }
 }

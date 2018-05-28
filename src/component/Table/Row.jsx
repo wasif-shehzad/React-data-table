@@ -5,56 +5,49 @@ import {Radio} from "./Radio";
 import {Tuple} from "./Tuple";
 import {TextField} from "./TextField";
 
-export class Row extends React.Component{
-constructor(){
-    super();
-}
-
-    render(){
-
+export function Row(props){
         return (
             <div>
-                {this.props.order.map((o,i)=>
+                {props.order.map((o,i)=>
                     <div  key={i}>
                         {
-                            this.props.type[i]==="String" || this.props.type[i]==="Text"
+                            props.type[i]==="String" || props.type[i]==="Text"
                                 ?
-                                <TextField  type="Text"  data ={this.props.item[o]} isEditable={this.props.isEditable}
-                                           inputOnChange={this.props.inputOnChange} rowNumber={this.props.rowNumber}
+                                <TextField  type="Text"  data ={props.item[o]} isEditable={props.isEditable}
+                                           inputOnChange={props.inputOnChange} rowNumber={props.rowNumber}
                                 colNumber={o}/>
                                 :
-                                this.props.type[i] === "Number"
+                                props.type[i] === "Number"
                                     ?
-                                    <TextField  type="Number" data={this.props.item[o]} isEditable={this.props.isEditable}
-                                                inputOnChange={this.props.inputOnChange} rowNumber={this.props.rowNumber}
+                                    <TextField  type="Number" data={props.item[o]} isEditable={props.isEditable}
+                                                inputOnChange={props.inputOnChange} rowNumber={props.rowNumber}
                                                 colNumber={o} />
                                     :
-                                this.props.type[i]==="Radio"  || this.props.type[i]==="Boolean"
+                                props.type[i]==="Radio"  || props.type[i]==="Boolean"
                                     ?
-                                    <Radio data={this.props.item[o]}/>
+                                    <Radio data={props.item[o]}/>
                                     :
-                                    this.props.type[i]==="Image"
+                                    props.type[i]==="Image"
                                         ?
-                                        <ImageComp  data={this.props.item[o]}/>
+                                        <ImageComp  data={props.item[o]}/>
                                         :
-                                        this.props.type[i]==="Dropdown"
+                                        props.type[i]==="Dropdown"
                                             ?
-                                            <Tuple data={this.props.item[o]}/>
+                                            <Tuple data={props.item[o]}/>
                                             :
-                                            this.props.type[i]==="List"
+                                            props.type[i]==="List"
                                                 ?
-                                                <Tuple  data={this.props.item[o]}/>
+                                                <Tuple  data={props.item[o]}/>
                                                 :
-                                                <Tuple  data={this.props.item[o]}/>
+                                                <Tuple  data={props.item[o]}/>
                         }
                     </div>
                 )}
                 <div className="table-colum-width pull-left"  style={{"padding":"3px 0px "}}>
 
-                    <ActionColumnComp deleteActionBtnClick={this.props.deleteActionBtnClick} rowNumber={this.props.rowNumber}/>
+                    <ActionColumnComp deleteActionBtnClick={props.deleteActionBtnClick} rowNumber={props.rowNumber}/>
 
                 </div>
             </div>
         );
-    }
-}
+};

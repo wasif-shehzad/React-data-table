@@ -27,11 +27,11 @@ constructor(){
     onDeleteBtnClick(row){
     this.state.data.splice(row,1);
     this.forceUpdate();
-    }
+    };
     onTupleEditable(value,row,col){
     this.state.data[row][col]=value;
     this.forceUpdate();
-    }
+    };
     getSearchData(values,cols){
    let data=[].concat(this.data)
         for(var a=0;a<data.length;a++)
@@ -51,7 +51,7 @@ constructor(){
             }
         }
         this.setState({data:data});
-    }
+    };
     onSorting(col,sortType,dataTypeIndex){
         if(sortType==="asc")
         {
@@ -86,7 +86,7 @@ constructor(){
         }
 
         this.forceUpdate();
-    }
+    };
     onColVisBtnClick(item,index){
         if(this.order[index]===item && this.state.order.indexOf(item)>-1)
         {
@@ -98,7 +98,7 @@ constructor(){
             this.state.order.splice(index,0,this.order[index]);
         }
         this.forceUpdate();
-    }
+    };
 
 
   render(){

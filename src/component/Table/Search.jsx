@@ -6,7 +6,6 @@ export class SearchComp extends React.Component{
         super();
         this.values=[];
         this.items=[];
-
         this.search=this.search.bind(this);
     }
     search(val,item){

@@ -1,16 +1,9 @@
-import * as React from "react";
 import {Tuple} from "./Tuple";
-
-export class TextField extends React.Component{
-        constructor(){
-            super();
-        }
-    render(){
-
+import React from "react";
+    export function TextField(props){
         return (
-            <Tuple type={this.props.type} data={this.props.data} isEditable={this.props.isEditable}
-                   rowNumber={this.props.rowNumber}   colNumber={this.props.colNumber}
-                   inputOnChange={this.props.inputOnChange}/>
+            <Tuple type={props.type} data={props.data} isEditable={props.isEditable}
+                   rowNumber={props.rowNumber}   colNumber={props.colNumber}
+                   inputOnChange={props.inputOnChange}/>
         );
-    }
 }
